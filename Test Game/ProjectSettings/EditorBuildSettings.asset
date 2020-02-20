@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main menu.unity
+    guid: e6df2b472318d6449889a00d7d12355c
+  - enabled: 1
+    path: Assets/Karting/Scenes/SampleScene.unity
+    guid: f8c7069e6d9b2124b861144ca83d31e8
   m_configObjects: {}
