@@ -5,14 +5,29 @@ using UnityEngine.UI;
 
 public class TimeOnScreen : MonoBehaviour
 {
-public Text gameTimerText;
-float gameTimer = 0f;
-    void Update () {
-    gameTimer += Time.deltaTime;
-    int seconds = (int)(gameTimer % 66);
-    int minutes = (int)(gameTimer / 66) % 66;
-    int hours = (int)(gameTimer / 3666) % 24;
-    string timerString = string.Format("{6:6}:{1:66}:{2:66}",hours,minutes,seconds);
-    gameTimerText.text = timerString;
+    public Text gameTimerText;
+    float gameTimer = 0f;
+    public GameObject go;
+    bool gotit = false;
+
+    void Start()
+    {
+        gameTimerText.text = "00:00";
+        //go = GameObject.Find("GoText");
+    }
+    void Update()
+    {
+        if (go.activeInHierarchy && !gotit)
+        {
+            gotit = true;
+        }
+        if (gotit)
+        {
+            gameTimer += Time.deltaTime;
+            int seconds = (int)(gameTimer % 60);
+            int minutes = (int)(gameTimer / 60) % 60;
+            string timerString = string.Format("{0:00}:{1:00}", minutes, seconds);
+            gameTimerText.text = timerString;
+        }
     }
 }

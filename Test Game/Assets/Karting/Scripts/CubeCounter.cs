@@ -9,7 +9,9 @@ using UnityEngine.UI;
 public class CubeCounter : MonoBehaviour
 {
     public Text cubes;
-    private int i = 10;
+    public int i = 10;
+
+    public GameObject canvas;
      void Start()
      {      
      }
@@ -19,8 +21,11 @@ public class CubeCounter : MonoBehaviour
           if(collision.gameObject.tag == "Cube")
           {
             i--;
-            Debug.Log("hit cube");
-            cubes.text = "Cubes left: " + i + "/10";
+            // if (i == 9){
+            //   //canvas = GameObject.Find("EndOfLevel");
+            //   canvas.SetActive(true);
+            // }
+            // cubes.text = "Cubes left: " + i + "/10";
           }
      }
  }
